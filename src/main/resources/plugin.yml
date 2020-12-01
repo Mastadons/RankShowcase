@@ -1,0 +1,6 @@
+name: RankShowcase
+main: me.mastadons.rankshowcase.RankShowcase
+version: 1.0.0-SNAPSHOT
+description: RankShowcase
+author: Mastadons
+softdepend: [HolographicDisplays, Citizens]

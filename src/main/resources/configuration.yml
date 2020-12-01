@@ -1,0 +1,10 @@
+updateFrequency: 600
+ignoredPlayers: ["43fe42c7-153f-4280-b2c5-3013b131c4ef"]
+databaseConfiguration:
+  hostname: na01-sql.pebblehost.com
+  database: customer_82653
+  username: customer_82653
+  password: 5994cf1f38
+  table: luckperms_user_permissions
+trackConfiguration:
+  tracks: []
