@@ -1,6 +1,5 @@
 package me.mastadons.rankshowcase.file;
 
-import me.mastadons.flag.DefinedFlag;
 import me.mastadons.flag.FlagManager;
 import me.mastadons.rankshowcase.RankShowcase;
 
@@ -18,7 +17,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 @FlagManager.FlaggedClass
 public class FileManager {
 
-    @FlagManager.FlaggedMethod(flag = DefinedFlag.PLUGIN_LOAD, priority = -5)
+    @FlagManager.FlaggedMethod(flag = RankShowcase.PLUGIN_LOAD_FLAG, priority = -5)
     public static void load() {
         RankShowcase.INSTANCE.getDataFolder().mkdirs();
     }

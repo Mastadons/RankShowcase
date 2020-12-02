@@ -5,7 +5,6 @@ import me.mastadons.rankshowcase.command.exception.SyntaxException;
 import me.mastadons.rankshowcase.configuration.Configuration;
 import me.mastadons.rankshowcase.structure.Rank;
 import me.mastadons.rankshowcase.structure.Track;
-import me.mastadons.rankshowcase.structure.VectorLocation;
 import org.bukkit.entity.Player;
 
 public class AddGroupCommand extends BasicCommandListener {

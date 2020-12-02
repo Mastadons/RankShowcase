@@ -2,7 +2,6 @@ package me.mastadons.rankshowcase.command;
 
 import me.mastadons.command.BasicCommandListener;
 import me.mastadons.command.CommandManager;
-import me.mastadons.flag.DefinedFlag;
 import me.mastadons.flag.FlagManager;
 import me.mastadons.rankshowcase.RankShowcase;
 import org.bukkit.entity.Player;
@@ -10,7 +9,7 @@ import org.bukkit.entity.Player;
 @FlagManager.FlaggedClass
 public class BaseCommand extends BasicCommandListener {
 
-    @FlagManager.FlaggedMethod(flag = DefinedFlag.PLUGIN_LOAD, priority = 10)
+    @FlagManager.FlaggedMethod(flag = RankShowcase.PLUGIN_LOAD_FLAG, priority = 10)
     public static void load() {
         CommandManager.registerCommand(RankShowcase.INSTANCE, new BaseCommand());
     }

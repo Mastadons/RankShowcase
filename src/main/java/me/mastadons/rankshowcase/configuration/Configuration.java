@@ -1,12 +1,10 @@
 package me.mastadons.rankshowcase.configuration;
 
 import lombok.Getter;
-import me.mastadons.flag.DefinedFlag;
 import me.mastadons.flag.FlagManager;
 import me.mastadons.rankshowcase.RankShowcase;
 import me.mastadons.rankshowcase.database.DatabaseConfiguration;
 import me.mastadons.rankshowcase.file.FileManager;
-import me.mastadons.rankshowcase.structure.Track;
 import me.mastadons.rankshowcase.structure.TrackConfiguration;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.CustomClassLoaderConstructor;
@@ -28,7 +26,7 @@ public class Configuration {
     @Getter private static Yaml configurationYaml;
     @Getter private static File configurationFile;
 
-    @FlagManager.FlaggedMethod(flag = DefinedFlag.PLUGIN_LOAD, priority = 0)
+    @FlagManager.FlaggedMethod(flag = RankShowcase.PLUGIN_LOAD_FLAG, priority = 0)
     public static void load() throws FileNotFoundException {
         RankShowcase.INSTANCE.getLogger().info("Loading configuration...");
 
@@ -39,10 +37,9 @@ public class Configuration {
 
         INSTANCE = configurationYaml.loadAs(configurationReader, Configuration.class);
         RankShowcase.INSTANCE.getLogger().info("Loaded configuration!");
-        FlagManager.runFlaggedMethods(RankShowcase.PACKAGE_NAME, DefinedFlag.POST_CONFIGURATION_LOAD);
     }
 
-    @FlagManager.FlaggedMethod(flag = DefinedFlag.PLUGIN_SAVE, priority = Integer.MAX_VALUE)
+    @FlagManager.FlaggedMethod(flag = RankShowcase.PLUGIN_SAVE_FLAG, priority = Integer.MAX_VALUE)
     public static void save() throws IOException {
         configurationFile = FileManager.getServerFile("configuration.yml", "configuration.yml");
         FileWriter configurationWriter = new FileWriter(configurationFile, false);

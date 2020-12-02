@@ -1,7 +1,7 @@
 package me.mastadons.rankshowcase.database;
 
-import me.mastadons.flag.DefinedFlag;
 import me.mastadons.flag.FlagManager;
+import me.mastadons.rankshowcase.RankShowcase;
 import me.mastadons.rankshowcase.configuration.Configuration;
 
 import java.sql.Connection;
@@ -18,7 +18,7 @@ public class DatabaseManager {
 
     public static DatabaseManager INSTANCE;
 
-    @FlagManager.FlaggedMethod(flag = DefinedFlag.PLUGIN_LOAD, priority = 10)
+    @FlagManager.FlaggedMethod(flag = RankShowcase.PLUGIN_LOAD_FLAG, priority = 10)
     public static void load() {
         INSTANCE = new DatabaseManager();
         try {
